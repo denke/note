@@ -2,13 +2,41 @@
 
 A simple web app to serve Markdown documents.
 
-## Install 
+## Usage
 
-    npm install denkenote
+On an empty directory, create a `server.js` file with this:
 
-## Usage 
+    var dn = require('denkenote');
+    dn.start({
+        content: 'src/'
+    });
 
-    var dn = require('./index.js');
+This will serve the Markdown files on the `src` folder. You can save a simple markdown `example.md` there:
+
+    title: My document Title
+    client: ACME Corp
+    url: custom-url
+    date: 05/04/2014
+    project: Project Name
+    version: 1.0
+    --header--
+    
+    # Some Markdown content here
+    
+    __Input:__
+    
+    * Mês
+    * Ano
+
+Then you start the server `node server.js` and go to the url printed on the console (something like `localhost:8800/`).
+
+## How it works
+
+Denke Note will search the `content` folder for `.md` files. It reads the files content and splits them using the `headerDivider` string. The first part loaded as a YAML object with `title`, `client`, `url`, `date`, `project` and `version`. The second part is parsed using `marked`. It also creates tokens to client and the document.
+
+## Config
+
+    var dn = require('denkenote');
     
     dn.start({
         // The port to serve the webapp
@@ -28,8 +56,4 @@ A simple web app to serve Markdown documents.
         // The company logo
         logo: 'img/logo.png',
         port: 
-    });
-
-## How it works 
-
-Denke Note will search the `content` folder for `.md` files. It reads the files content and splits them using the `headerDivider` string. The first part loaded as a YAML object with `title`, `client`, `url`, `date`, `project` and `version`. The second part is parsed using `marked`. It also creates tokens to client and the document.
+    }); 
