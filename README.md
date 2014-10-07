@@ -6,13 +6,16 @@ A simple web app to serve Markdown documents.
 
 On an empty directory, create a `server.js` file with this:
 
+```js
     var dn = require('denkenote');
     dn.start({
         content: 'src/'
     });
+```
 
 This will serve the Markdown files on the `src` folder. You can save a simple markdown `example.md` there:
 
+```md
     title: My document Title
     client: ACME Corp
     url: custom-url
@@ -27,6 +30,7 @@ This will serve the Markdown files on the `src` folder. You can save a simple ma
     
     * Mês
     * Ano
+```
 
 Then you start the server `node server.js` and go to the url printed on the console (something like `localhost:8800/`).
 
@@ -36,6 +40,7 @@ Denke Note will search the `content` folder for `.md` files. It reads the files 
 
 ## Config
 
+```js
     var dn = require('denkenote');
     
     dn.start({
@@ -56,3 +61,4 @@ Denke Note will search the `content` folder for `.md` files. It reads the files 
         // The company logo
         logo: 'img/logo.png'
     }); 
+```
