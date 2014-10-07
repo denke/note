@@ -54,6 +54,5 @@ Denke Note will search the `content` folder for `.md` files. It reads the files 
         // Divide the metadata from the markdown content 
         headerDivider: "--header--",
         // The company logo
-        logo: 'img/logo.png',
-        port: 
+        logo: 'img/logo.png'
     }); 
