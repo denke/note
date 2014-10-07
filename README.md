@@ -15,7 +15,7 @@ On an empty directory, create a `server.js` file with this:
 
 This will serve the Markdown files on the `src` folder. You can save a simple markdown `example.md` there:
 
-```md
+```markdown
     title: My document Title
     client: ACME Corp
     url: custom-url
