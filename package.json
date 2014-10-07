@@ -1,0 +1,23 @@
+{
+  "name": "denkenote",
+  "version": "0.0.0",
+  "description": "Markdown note publishing app. Useful for docs, wikis and blogs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Denke Open Source Team <opensource@denke.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^2.0.0",
+    "hapi": "^6.11.1",
+    "js-yaml": "^3.2.2",
+    "lodash": "^2.4.1",
+    "markdown-pdf": "^3.0.2",
+    "marked": "^0.3.2",
+    "moment": "^2.8.3",
+    "mustache": "^0.8.2",
+    "path": "^0.4.9",
+    "shorthash": "0.0.2"
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shared Links</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Denke">
+    <link rel="stylesheet" href="{{baseUrl}}css/denke.css" type="text/css">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicon-57.png">
+</head>
+<body>
+    <div class="grid">
+        <article>
+            <header>
+                <img src="{{baseUrl}}{{logo}}" alt="DENKE">
+            </header>
+            <div id="main" role="main" class="cf">
+                <div class="file-list">
+                    <div class="head clearfix">
+                        <div class="name">Document</div>
+                        <div class="client">Client</div>
+                        <div class="date">Date</div>
+                        <div class="project">Project</div>
+                    </div>
+
+                    <ol>
+                        {{#each files}}
+                        <li class="entry clearfix">
+                            <div class="name">
+                                <a href="{{../baseUrl}}d/{{metadata.token}}" target="_blank">{{metadata.title}}</a>
+                            </div>
+                            <div class="client">
+                                {{#if ../admin}}
+                                <td><a href="{{../baseUrl}}c/{{clientToken}}" target="_blank">{{metadata.client}}</a>
+                                </td>
+                                {{else}}
+                                <td>{{metadata.client}}</td>
+                                {{/if}}
+                            </div>
+                            <div class="date">{{metadata.date}}</div>
+                            <div class="project">{{metadata.project}}</div>
+                        </li>
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
+        </article>
+    </div>
+<script type="text/javascript" src="//use.typekit.net/qxa3xpv.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</body>
+
+</html>

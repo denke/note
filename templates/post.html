@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{header.title}}</title>
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <meta name="description" content="">
+    <meta name="author" content="Denke">
+    <link rel="stylesheet" href="{{baseUrl}}css/denke.css" type="text/css">
+
+    <link rel="shortcut icon" href="{{baseUrl}}img/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{baseUrl}}img/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{baseUrl}}img/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="{{baseUrl}}img/favicon-57.png">
+</head>
+<body>
+	
+<div class="grid">
+	<article>
+		<header>
+			<img src="{{baseUrl}}{{logo}}" alt="DENKE">
+			<div style="float:right; font-size:0.8em;">
+				<ul>
+					<li><strong>Project:</strong> {{header.project}}</li>
+					<li><strong>Date:</strong> {{header.date}}</li>
+					<li><strong>Client:</strong> {{header.client}}</li>
+				</ul>
+			</div>
+		</header>
+		<div id="main" role="main" class="cf">
+			{{{text}}}
+		</div>
+	</article>
+</div>
+
+</body>
+</html>
