@@ -3,7 +3,7 @@
 'use strict';
 
 
-process.title = 'denke-note';
+process.title = 'note';
 
 var colors = require('colors'),
     note = require('../index.js'),
