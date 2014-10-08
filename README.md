@@ -32,8 +32,8 @@ __Input:__
 On an empty directory, create a `server.js` file with this:
 
 ```js
-var dn = require('denke-note');
-dn.start({
+var note = require('denke-note');
+note.start({
     content: 'src/'
 });
 ```
@@ -58,9 +58,9 @@ Denke Note will search the `content` folder for `.md` files. It reads the files 
 ## Config
 
 ```js
-var dn = require('denke-note');
+var note = require('denke-note');
 
-dn.start({
+note.start({
     // The port to serve the webapp
     port: process.env.port || 8800, 
     // The content folder
