@@ -5,8 +5,7 @@
 
 process.bin = process.title = 'denke-note';
 
-var colors = require('colors'),
-    note = require('../index.js'),
+var note = require('../index.js'),
     portfinder = require('portfinder'),
     opener = require('opener'),
     Path = require('path'),
