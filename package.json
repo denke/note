@@ -1,6 +1,6 @@
 {
   "name": "denke-note",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Create simple webapps to host markdown documents.",
   "main": "index.js",
   "bin": {
@@ -9,6 +9,9 @@
   "keywords": [],
   "scripts": {
     "start": "node ./bin/denke-note"
+  },
+  "engines": {
+    "node": ">=0.10.32"
   },
   "author": "Denke Open Source Team <opensource@denke.com.br>",
   "license": "MIT",
