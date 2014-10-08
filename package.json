@@ -1,6 +1,6 @@
 {
   "name": "denke-note",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create simple webapps to host markdown documents.",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,7 @@
   },
   "author": "Denke Open Source Team <opensource@denke.com.br>",
   "license": "MIT",
+  "repository": "https://github.com/denke/note",
   "dependencies": {
     "handlebars": "^2.0.0",
     "hapi": "^6.11.1",
@@ -17,6 +18,7 @@
     "marked": "^0.3.2",
     "moment": "^2.8.3",
     "mustache": "^0.8.2",
+    "node-watch": "^0.3.4",
     "path": "^0.4.9",
     "shorthash": "0.0.2"
   }

@@ -25,6 +25,9 @@
 					<li><strong>Project:</strong> {{header.project}}</li>
 					<li><strong>Date:</strong> {{header.date}}</li>
 					<li><strong>Client:</strong> {{header.client}}</li>
+					{{#if pdf}}
+					<li><a href="{{baseUrl}}p/{{token}}">Download PDF</a></li>
+					{{/if}}
 				</ul>
 			</div>
 		</header>
