@@ -13,19 +13,21 @@ var colors = require('colors'),
     parser = require("nomnom");
 
 parser.command('serve')
-	.option('path', {
+	.option('content', {
+      abbr: 'c',
+      help: "The path to the content folder"
+   })
+	.option('port', {
       abbr: 'p',
       help: "The path to the content folder"
    })
    .callback(function(opts) {
       console.log(opts)
       var config = {};
-      if(opts.path) {
-      	config.content = opts.path;
-      	console.log(config.content);
-      }
+      if(opts.content) { config.content = opts.content; }
+      else { config.content = __dirname }
       note.start(config);
    })
-   .help("serve current folder");
+   .help("serve a given folder");
 
 parser.parse();
