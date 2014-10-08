@@ -4,16 +4,11 @@ A simple web app to serve Markdown documents.
 
 ## Usage
 
-On an empty directory, create a `server.js` file with this:
+### Command Line
 
-```js
-var dn = require('denke-note');
-dn.start({
-    content: 'src/'
-});
-```
+    denke-note serve -c content/
 
-This will serve the Markdown files on the `src` folder. You can save a simple markdown `example.md` there:
+This will serve the Markdown files on the `content/` folder, inside this folder and it subfolders we expect to find files such as this one:
 
 ```markdown
 title: My document Title
@@ -31,6 +26,19 @@ __Input:__
 * Mês
 * Ano
 ```
+
+### API 
+
+On an empty directory, create a `server.js` file with this:
+
+```js
+var dn = require('denke-note');
+dn.start({
+    content: 'src/'
+});
+```
+
+This will serve the Markdown files on the `src` folder. You can save a simple markdown `example.md` as above. 
 
 Then you start the server `node server.js` and go to the url printed on the console (something like `localhost:8800/`).
 
