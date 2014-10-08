@@ -3,7 +3,7 @@
 'use strict';
 
 
-process.title = 'note';
+process.bin = process.title = 'denke-note';
 
 var colors = require('colors'),
     note = require('../index.js'),
@@ -15,17 +15,23 @@ var colors = require('colors'),
 parser.command('serve')
 	.option('content', {
       abbr: 'c',
+      required: false,
       help: "The path to the content folder"
    })
 	.option('port', {
       abbr: 'p',
+      required: false,
       help: "The path to the content folder"
    })
    .callback(function(opts) {
-      console.log(opts)
       var config = {};
-      if(opts.content) { config.content = opts.content; }
-      else { config.content = __dirname }
+      if(opts.content) { 
+      	config.content = opts.content; 
+      } else { 
+      	config.content = process.cwd();
+      }
+      if(opts.port) { config.port = opts.port; }
+      console.log(config)
       note.start(config);
    })
    .help("serve a given folder");
