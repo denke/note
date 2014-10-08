@@ -34,6 +34,15 @@ __Input:__
 
 Then you start the server `node server.js` and go to the url printed on the console (something like `localhost:8800/`).
 
+### Metadata
+
+* __client__ Documents are grouped by Client
+* __url__ You can set a custom url and use it instead of the document ID (hash)
+* __project__ Documents belong to a Project
+* __title__
+* __date__ 
+* __version__ 
+
 ## How it works
 
 Denke Note will search the `content` folder for `.md` files. It reads the files content and splits them using the `headerDivider` string. The first part loaded as a YAML object with `title`, `client`, `url`, `date`, `project` and `version`. The second part is parsed using `marked`. It also creates tokens to client and the document.
