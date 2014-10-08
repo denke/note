@@ -1,19 +1,19 @@
 {
     "name": "denke-note",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "description": "Create simple webapps to host markdown documents.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "bin": {
-        "denke-note": "./bin/note"
+        "denke-note": "./bin/denke-note"
     },
     "keywords": [
         
     ],
     "scripts": {
-        "start": "node ./bin/note"
+        "start": "node ./bin/denke-note"
     },
     "author": "Denke Open Source Team <opensource@denke.com.br>",
     "license": "MIT",
