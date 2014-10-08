@@ -10,6 +10,7 @@
   "license": "MIT",
   "repository": "https://github.com/denke/note",
   "dependencies": {
+    "colors": "^1.0.2",
     "handlebars": "^2.0.0",
     "hapi": "^6.11.1",
     "js-yaml": "^3.2.2",
@@ -20,7 +21,10 @@
     "moment": "^2.8.3",
     "mustache": "^0.8.2",
     "node-watch": "^0.3.4",
+    "nomnom": "^1.8.0",
+    "opener": "^1.4.0",
     "path": "^0.4.9",
+    "portfinder": "^0.2.1",
     "shorthash": "0.0.2"
   }
 }
