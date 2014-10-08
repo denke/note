@@ -7,13 +7,13 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "bin": {
-        "denke-note": "./bin/denke-note"
+        "denke-note": "./bin/note"
     },
     "keywords": [
         
     ],
     "scripts": {
-        "start": "node ./bin/denke-note"
+        "start": "node ./bin/note"
     },
     "author": "Denke Open Source Team <opensource@denke.com.br>",
     "license": "MIT",
