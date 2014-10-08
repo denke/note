@@ -1,6 +1,6 @@
 {
   "name": "denke-note",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Create simple webapps to host markdown documents.",
   "main": "index.js",
   "scripts": {
