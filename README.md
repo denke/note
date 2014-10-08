@@ -7,7 +7,7 @@ A simple web app to serve Markdown documents.
 On an empty directory, create a `server.js` file with this:
 
 ```js
-var dn = require('denkenote');
+var dn = require('denke-note');
 dn.start({
     content: 'src/'
 });
@@ -41,7 +41,7 @@ Denke Note will search the `content` folder for `.md` files. It reads the files 
 ## Config
 
 ```js
-var dn = require('denkenote');
+var dn = require('denke-note');
 
 dn.start({
     // The port to serve the webapp
