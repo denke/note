@@ -21,7 +21,7 @@ parser.command('serve')
 	.option('port', {
       abbr: 'p',
       required: false,
-      help: "The path to the content folder"
+      help: "Will try and use numbers >= the port number defined here"
    })
    .callback(function(opts) {
       var config = {};
