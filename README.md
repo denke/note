@@ -58,8 +58,6 @@ dn.start({
     separator: '//',
     // Divide the metadata from the markdown content 
     headerDivider: "--header--",
-    // The company logo
-    logo: 'img/logo.png',
     // If true enables a link to download the documents on PDF
     pdf: false
 }); 

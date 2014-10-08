@@ -16,6 +16,7 @@
     "lodash": "^2.4.1",
     "markdown-pdf": "^3.0.2",
     "marked": "^0.3.2",
+    "mime": "^1.2.11",
     "moment": "^2.8.3",
     "mustache": "^0.8.2",
     "node-watch": "^0.3.4",
