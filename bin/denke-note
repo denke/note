@@ -59,7 +59,7 @@ parser.command('serve')
     if(opts.pdf) { config.pdf = opts.pdf; }
     note.start(config);
   })
-  .help("serve a given folder");
+  .help("Serve the markdown files on a folder.");
 
 parser.command('new')
   .callback(function(opts) {
@@ -67,5 +67,13 @@ parser.command('new')
     
   })
   .help("Create a boilerplate app to be customized");  
+
+
+parser.command('config')
+  .callback(function(opts) {
+    var dir = process.cwd(); 
+    
+  })
+  .help("Change the defaults on Denke Note");  
 
 parser.parse();
