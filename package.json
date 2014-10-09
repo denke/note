@@ -1,6 +1,6 @@
 {
   "name": "denke-note",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Create simple webapps to host markdown documents.",
   "main": "index.js",
   "bin": {
@@ -17,6 +17,7 @@
   "license": "MIT",
   "repository": "https://github.com/denke/note",
   "dependencies": {
+    "glob": "^4.0.6",
     "handlebars": "2.0.0",
     "hapi": "6.11.1",
     "js-yaml": "3.2.2",

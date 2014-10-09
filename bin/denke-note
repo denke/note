@@ -45,9 +45,10 @@ parser.command('serve')
     help: "If true enables a link to download the documents on PDF. Defaults to `false`."
   })
   .callback(function(opts) {
+    console.log(opts)
     var config = {};
-    if(opts.content) { 
-    	config.content = opts.content; 
+    if(opts[1]) { 
+    	config.content = Path.resolve(opts[1]); 
     } else { 
     	config.content = process.cwd();
     }
