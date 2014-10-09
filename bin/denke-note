@@ -2,7 +2,6 @@
 
 'use strict';
 
-
 process.bin = process.title = 'denke-note';
 
 var note = require('../index.js'),
@@ -12,46 +11,61 @@ var note = require('../index.js'),
     parser = require("nomnom");
 
 parser.command('serve')
+  .option('content', {
+    abbr: 'c',
+    required: false,
+    help: "A folder with markdown files. Defaults to `process.cwd()`."
+  })
   .option('port', {
-      abbr: 'p',
-      required: false,
-      help: "Will try and use numbers >= the port number defined here. Defaults to `process.env.port || 8800`."
-   })
+    abbr: 'p',
+    required: false,
+    help: "Will try and use numbers >= the port number defined here. Defaults to `process.env.port || 8800`."
+  })
   .option('salt', {
-      required: false,
-      help: "Salt to use when creating your hashes"
-   })
+    required: false,
+    help: "Salt to use when creating your hashes"
+  })
   .option('stealth', {
-      abbr: 's',
-      required: false,
-      help: "You can use a secret URL to hide the post list (example: 'denke-note serve content/ -s /hidden/path/')"
-   })
+    abbr: 's',
+    required: false,
+    help: "You can use a secret URL to hide the post list (example: 'denke-note serve content/ -s /hidden/path/')"
+  })
   .option('baseUrl', {
-      abbr: 'url',
-      required: false,
-      help: "Use with stealth when the route is changed (example: '../../')"
-   })
+    abbr: 'url',
+    required: false,
+    help: "Use with stealth when the route is changed (example: '../../')"
+  })
   .option('headerDivider', {
-      abbr: 'd',
-      required: false,
-      help: "A string used to divide the metadata from the markdown content. Defaults to `--header--`."
-   })
+    abbr: 'd',
+    required: false,
+    help: "A string used to divide the metadata from the markdown content. Defaults to `--header--`."
+  })
   .option('pdf', {
-      required: false,
-      help: "If true enables a link to download the documents on PDF. Defaults to `false`."
-   })
-   .callback(function(opts) {
-      var config = {};
-      if(opts.content) { 
-      	config.content = opts.content; 
-      } else { 
-      	config.content = process.cwd();
-      }
-      if(opts.port) { config.port = opts.port; }
-      if(opts.salt) { config.salt = opts.salt; }
-      if(opts.baseUrl) { config.baseUrl = opts.baseUrl; }
-      note.start(config);
-   })
-   .help("serve a given folder");
+    required: false,
+    help: "If true enables a link to download the documents on PDF. Defaults to `false`."
+  })
+  .callback(function(opts) {
+    var config = {};
+    if(opts.content) { 
+    	config.content = opts.content; 
+    } else { 
+    	config.content = process.cwd();
+    }
+    if(opts.port) { config.port = opts.port; }
+    if(opts.stealth) { config.stealth = opts.stealth; }
+    if(opts.salt) { config.salt = opts.salt; }
+    if(opts.baseUrl) { config.baseUrl = opts.baseUrl; }
+    if(opts.headerDivider) { config.headerDivider = opts.headerDivider; }
+    if(opts.pdf) { config.pdf = opts.pdf; }
+    note.start(config);
+  })
+  .help("serve a given folder");
+
+parser.command('new')
+  .callback(function(opts) {
+    var dir = process.cwd(); 
+    
+  })
+  .help("Create a boilerplate app to be customized");  
 
 parser.parse();
