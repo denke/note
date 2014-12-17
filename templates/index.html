@@ -24,9 +24,8 @@
                 <div class="file-list">
                     <div class="head clearfix">
                         <div class="name">Document</div>
-                        <div class="client">Client</div>
-                        <div class="date">Date</div>
-                        <div class="project">Project</div>
+                        <div class="date">Created</div>
+                        <div class="date">Edited</div>
                     </div>
 
                     <ol>
@@ -35,16 +34,8 @@
                             <div class="name">
                                 <a href="{{../baseUrl}}d/{{metadata.token}}" target="_blank">{{metadata.title}}</a>
                             </div>
-                            <div class="client">
-                                {{#if ../admin}}
-                                <td><a href="{{../baseUrl}}c/{{clientToken}}" target="_blank">{{metadata.client}}</a>
-                                </td>
-                                {{else}}
-                                <td>{{metadata.client}}</td>
-                                {{/if}}
-                            </div>
-                            <div class="date">{{metadata.date}}</div>
-                            <div class="project">{{metadata.project}}</div>
+                            <div class="date">{{metadata.ctime}}</div>
+                            <div class="date">{{metadata.mtime}}</div>
                         </li>
                         {{/each}}
                     </ol>

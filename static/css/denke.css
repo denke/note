@@ -266,15 +266,7 @@ table > tbody > tr:nth-child(odd) > td, table > tbody > tr:nth-child(odd) > th {
 }
 .head .date, .entry .date {
     float: left;
-    width: 20%;
-    display: block;
-    cursor: default;
-    text-align: left;
-    line-height: 2;
-}
-.head .project, .entry .project {
-    float: left;
-    width: 20%;
+    width: 30%;
     display: block;
     cursor: default;
     text-align: left;
