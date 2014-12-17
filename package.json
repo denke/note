@@ -1,5 +1,5 @@
 {
-  "name": "denke note",
+  "name": "denke-note",
   "version": "0.1.1",
   "description": "Create simple websites to host your markdown documents.",
   "main": "index.js",
