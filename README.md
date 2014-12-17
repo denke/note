@@ -6,18 +6,15 @@ A simple web app to serve Markdown documents.
 
 ### Command Line
 
-    denke-note serve -c content/
+    denke-note serve content/
 
 This will serve the Markdown files on the `content/` folder, inside this folder and it subfolders we expect to find files such as this one:
 
 ```markdown
+---
 title: My document Title
-client: ACME Corp
 url: custom-url
-date: 05/04/2014
-project: Project Name
-version: 1.0
---header--
+---
 
 # Some Markdown content here
 
@@ -44,16 +41,15 @@ Then you start the server `node server.js` and go to the url printed on the cons
 
 ### Metadata
 
-* __client__ Documents are grouped by Client
-* __url__ You can set a custom url and use it instead of the document ID (hash)
-* __project__ Documents belong to a Project
-* __title__
-* __date__ 
-* __version__ 
+
+* __title__ Your document title.
+* __url__ You can set a custom url and use it to group documents (optional)
 
 ## How it works
 
-Denke Note will search the `content` folder for `.md` files. It reads the files content and splits them using the `headerDivider` string. The first part loaded as a YAML object with `title`, `client`, `url`, `date`, `project` and `version`. The second part is parsed using `marked`. It also creates tokens to client and the document.
+Denke Note will search the `content` folder for `.md` files. It reads the files content and splits them using `front-matter`. And we use `marked` to parse the markdown content.
+
+Denke Note will print the URL for which your files are being served. You can hide your files using the `stealth` option described next.
 
 ## Config
 
@@ -71,10 +67,6 @@ note.start({
     baseUrl: '', 
     // Salt your hashes
     salt: 'uita+kap.pa8hae7*' 
-    // Directory separator (different on Windows)
-    separator: '//',
-    // Divide the metadata from the markdown content 
-    headerDivider: "--header--",
     // If true enables a link to download the documents on PDF
     pdf: false
 }); 

@@ -2,7 +2,8 @@
 
 'use strict';
 
-process.bin = process.title = 'denke-note';
+process.bin = 'dnote';
+process.title = 'Denke Note';
 
 var note = require('../index.js'),
     portfinder = require('portfinder'),
@@ -35,11 +36,6 @@ parser.command('serve')
     required: false,
     help: "Use with stealth when the route is changed (example: '../../')"
   })
-  .option('headerDivider', {
-    abbr: 'd',
-    required: false,
-    help: "A string used to divide the metadata from the markdown content. Defaults to `--header--`."
-  })
   .option('pdf', {
     required: false,
     help: "If true enables a link to download the documents on PDF. Defaults to `false`."
@@ -56,7 +52,6 @@ parser.command('serve')
     if(opts.stealth) { config.stealth = opts.stealth; }
     if(opts.salt) { config.salt = opts.salt; }
     if(opts.baseUrl) { config.baseUrl = opts.baseUrl; }
-    if(opts.headerDivider) { config.headerDivider = opts.headerDivider; }
     if(opts.pdf) { config.pdf = opts.pdf; }
     note.start(config);
   })
