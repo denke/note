@@ -6,7 +6,7 @@ A simple web app to serve Markdown documents.
 
 ### Command Line
 
-    denke-note serve content/
+    > dnote serve content/
 
 This will serve the Markdown files on the `content/` folder, inside this folder and it subfolders we expect to find files such as this one:
 
