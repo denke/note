@@ -1,6 +1,6 @@
 {
   "name": "denke-note",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Create simple websites to host your markdown documents.",
   "main": "index.js",
   "bin": {

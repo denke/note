@@ -2,13 +2,15 @@
 
 A simple web app to serve Markdown documents.
 
-## Usage
+## Install with npm
+
+    > npm install -g denke-note
 
 ### Command Line
 
-    > dnote serve content/
+    > dnote serve 
 
-This will serve the Markdown files on the `content/` folder, inside this folder and it subfolders we expect to find files such as this one:
+This will serve the Markdown files on the current folder, inside this folder and it subfolders we expect to find files (grouped with directories) such as this one:
 
 ```markdown
 ---
@@ -41,13 +43,11 @@ Then you start the server `node server.js` and go to the url printed on the cons
 
 ### Metadata
 
-
 * __title__ Your document title.
-* __url__ You can set a custom url and use it to group documents (optional)
 
 ## How it works
 
-Denke Note will search the `content` folder for `.md` files. It reads the files content and splits them using `front-matter`. And we use `marked` to parse the markdown content.
+Denke Note will search the `content` folder for `.md` files. It reads the files content and parse the `front-matter` metadata. 
 
 Denke Note will print the URL for which your files are being served. You can hide your files using the `stealth` option described next.
 
@@ -55,6 +55,9 @@ Denke Note will print the URL for which your files are being served. You can hid
 
 ```js
 var note = require('denke-note');
+
+
+function b(a){return a?(a^Math.random()*16>>a/4).toString(16):([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,b)}; // this awesomeness comes from here: https://gist.github.com/jed/982883
 
 note.start({
     // The port to serve the webapp
@@ -66,7 +69,7 @@ note.start({
     // Use with stealth when the route is changed (example: '../../')
     baseUrl: '', 
     // Salt your hashes
-    salt: 'uita+kap.pa8hae7*' 
+    salt: b(),
     // If true enables a link to download the documents on PDF
     pdf: false
 }); 
