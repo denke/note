@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Shared Links</title>
+    <title>Denke Note</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="Denke">
@@ -23,9 +23,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">Denke Note</a>
+                <a href="/" class="navbar-brand">Denke Note</a>
             </div>
-            <ul class="nav navbar-nav navbar-collapse navbar-right">
+            <ul class="collapse nav navbar-nav navbar-collapse navbar-right">
                 {{#each categories}}
                 <li {{#active_class @index @root.cindex}}class="active"{{/active_class}}>
                     <a href="{{../baseUrl}}{{.}}">{{category_name}}</a>
@@ -37,19 +37,6 @@
     <div class="container">
         <div class="row">
             <div role="tabpanel">
-                <div class="col-md-3">
-
-                    <ul class="nav nav-pills nav-stacked" role="tablist">
-                        {{#each posts}} 
-                        <li role="presentation" {{#active_class @index @root.pindex}}class="active"{{/active_class}}>
-                            <a href="#{{metadata.token}}" aria-controls="{{metadata.token}}" role="tab" data-toggle="tab">
-                                {{metadata.title}}
-                                <a class="permalink" href="{{../baseUrl}}{{../cat}}/{{metadata.token}}"><i class="ion-link"></i></a>
-                            </a>
-                        </li>
-                        {{/each}}
-                    </ul>
-                </div>
                 <div class="col-sm-12 col-md-9">
                     <!-- Tab panes -->
                     <div class="tab-content">
@@ -59,7 +46,21 @@
                         </div>
                         {{/each}}
                     </div>
-
+                </div>
+                <div class="col-md-3">
+                    <ul class="nav nav-pills nav-stacked" role="tablist">
+                        <li class="mh" role="presentation">
+                            Related Information
+                        </li>
+                        {{#each posts}} 
+                        <li role="presentation" {{#active_class @index @root.pindex}}class="active"{{/active_class}}>
+                            <a href="#{{metadata.token}}" aria-controls="{{metadata.token}}" role="tab" data-toggle="tab">
+                                {{metadata.title}}
+                                <a class="permalink" href="{{../baseUrl}}{{../cat}}/{{metadata.token}}"><i class="ion-link"></i></a>
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
                 </div>
             </div>
         </div>

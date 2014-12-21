@@ -12,64 +12,15 @@ var note = require('../index.js'),
     parser = require("nomnom");
 
 parser.command('serve')
-  .option('content', {
-    abbr: 'c',
-    required: false,
-    help: "A folder with markdown files. Defaults to `process.cwd()`."
-  })
-  .option('port', {
-    abbr: 'p',
-    required: false,
-    help: "Will try and use numbers >= the port number defined here. Defaults to `process.env.port || 8800`."
-  })
-  .option('salt', {
-    required: false,
-    help: "Salt to use when creating your hashes"
-  })
-  .option('stealth', {
-    abbr: 's',
-    required: false,
-    help: "You can use a secret URL to hide the post list (example: 'denke-note serve content/ -s /hidden/path/')"
-  })
-  .option('baseUrl', {
-    abbr: 'url',
-    required: false,
-    help: "Use with stealth when the route is changed (example: '../../')"
-  })
-  .option('pdf', {
-    required: false,
-    help: "If true enables a link to download the documents on PDF. Defaults to `false`."
-  })
   .callback(function(opts) {
-    console.log(opts)
     var config = {};
     if(opts[1]) { 
     	config.content = Path.resolve(opts[1]); 
     } else { 
     	config.content = process.cwd();
     }
-    if(opts.port) { config.port = opts.port; }
-    if(opts.stealth) { config.stealth = opts.stealth; }
-    if(opts.salt) { config.salt = opts.salt; }
-    if(opts.baseUrl) { config.baseUrl = opts.baseUrl; }
-    if(opts.pdf) { config.pdf = opts.pdf; }
     note.start(config);
   })
-  .help("Serve the markdown files on a folder.");
-
-parser.command('new')
-  .callback(function(opts) {
-    var dir = process.cwd(); 
-    
-  })
-  .help("Create a boilerplate app to be customized");  
-
-
-parser.command('config')
-  .callback(function(opts) {
-    var dir = process.cwd(); 
-    
-  })
-  .help("Change the defaults on Denke Note");  
+  .help("Serve the markdown files on the current folder.");
 
 parser.parse();
