@@ -1,50 +1,74 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Shared Links</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="Denke">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-    <link rel="stylesheet" href="{{baseUrl}}main.css" type="text/css">
+    <link rel="stylesheet" href="{{baseUrl}}static/css/bs.min.css" type="text/css">
+    <link rel="stylesheet" href="{{baseUrl}}static/css/main.css" type="text/css">
 
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon-72.png">
-    <link rel="apple-touch-icon-precomposed" href="img/favicon-57.png">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" type="text/css">
 </head>
-<body>
-    <div class="grid">
-        <article>
-            <header>
-                <img src="{{logo}}" alt="Denke Note">
-            </header>
-            <div id="main" role="main" class="cf">
-                <div class="file-list">
-                    <div class="head clearfix">
-                        <div class="name">Document</div>
-                        <div class="date">Created</div>
-                        <div class="date">Edited</div>
-                    </div>
 
-                    <ol>
-                        {{#each files}}
-                        <li class="entry clearfix">
-                            <div class="name">
-                                <a href="{{../baseUrl}}d/{{metadata.token}}" target="_blank">{{metadata.title}}</a>
-                            </div>
-                            <div class="date">{{metadata.ctime}}</div>
-                            <div class="date">{{metadata.mtime}}</div>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Denke Note</a>
+            </div>
+            <ul class="nav navbar-nav navbar-collapse navbar-right">
+                {{#each categories}}
+                <li {{#active_class @index @root.cindex}}class="active"{{/active_class}}>
+                    <a href="{{../baseUrl}}{{.}}">{{category_name}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div role="tabpanel">
+                <div class="col-md-3">
+
+                    <ul class="nav nav-pills nav-stacked" role="tablist">
+                        {{#each posts}} 
+                        <li role="presentation" {{#active_class @index @root.pindex}}class="active"{{/active_class}}>
+                            <a href="#{{metadata.token}}" aria-controls="{{metadata.token}}" role="tab" data-toggle="tab">
+                                {{metadata.title}}
+                                <a class="permalink" href="{{../baseUrl}}{{../cat}}/{{metadata.token}}"><i class="ion-link"></i></a>
+                            </a>
                         </li>
                         {{/each}}
-                    </ol>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-9">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        {{#each posts}}
+                        <div role="tabpanel" class="tab-pane {{#active_class @index @root.pindex}}active{{/active_class}}  " id="{{metadata.token}}">
+                            {{{text}}}
+                        </div>
+                        {{/each}}
+                    </div>
+
                 </div>
             </div>
-        </article>
+        </div>
     </div>
-<script type="text/javascript" src="//use.typekit.net/qxa3xpv.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{baseUrl}}bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
