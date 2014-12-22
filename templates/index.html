@@ -17,14 +17,17 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
+                {{#if showCategories}}
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                {{/if}}
                 <a href="/" class="navbar-brand">Denke Note</a>
             </div>
+            {{#if showCategories}}
             <ul class="collapse nav navbar-nav navbar-collapse navbar-right">
                 {{#each categories}}
                 <li {{#active_class @index @root.cindex}}class="active"{{/active_class}}>
@@ -32,6 +35,7 @@
                 </li>
                 {{/each}}
             </ul>
+            {{/if}}
         </div>
     </nav>
     <div class="container">

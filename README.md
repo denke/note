@@ -56,8 +56,8 @@ Denke Note will print the URL for which your files are being served. You can hid
 ```js
 var note = require('denke-note');
 
-
-function b(a){return a?(a^Math.random()*16>>a/4).toString(16):([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,b)}; // this awesomeness comes from here: https://gist.github.com/jed/982883
+// this awesomeness is from this gist: https://gist.github.com/jed/982883
+function b(a){return a?(a^Math.random()*16>>a/4).toString(16):([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,b)};
 
 note.start({
     // The port to serve the webapp
