@@ -4,7 +4,7 @@
 process.title = process.bin = 'dnote';
 
 var Path = require('path'),
-    note = require(Path.resolve('../index.js')),
+    note = require(Path.join(__dirname,'../index.js')),
     portfinder = require('portfinder'),
     opener = require('opener'),
     parser = require("nomnom");
