@@ -7,3 +7,5 @@ body {padding-top: 60px;}
 .nav .active .permalink {display: inline-block}
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background: transparent;}
 .mh {padding: 10px 15px;color:#999;font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+.me {padding: 5px 15px;color:#999; border-bottom: 1px solid #dedede;}
+.me.first {border-top: 1px solid #dedede;}

@@ -52,9 +52,10 @@
                     </div>
                 </div>
                 <div class="col-md-3">
+                    
                     <ul class="nav nav-pills nav-stacked" role="tablist">
                         <li class="mh" role="presentation">
-                            Related Information
+                            Related Links
                         </li>
                         {{#each posts}} 
                         <li role="presentation" {{#active_post @index @root.pindex}}class="active"{{/active_post}}>
@@ -65,20 +66,31 @@
                         </li>
                         {{/each}}
                     </ul>
-                    {{#if pdf}}
+                    {{#each posts}}
+                    {{#active_post @index @root.pindex}}
+                    {{#if ../../pdf}}
                     <ul class="nav nav-pills nav-stacked">
                         <li class="mh" role="presentation">
                             Download
                         </li>
                         <li role="presentation">
-                            {{#each posts}}
-                            {{#active_post @index @root.pindex}}
                             <a href="{{../../baseUrl}}print/pdf/{{../../cat}}/{{metadata.url}}">PDF</a>
-                            {{/active_post}}
-                            {{/each}}
                         </li>
                     </ul>
                     {{/if}}
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="mh" role="presentation">
+                            Metadata
+                        </li>
+                        <li class="first me" role="presentation">
+                            Updated <span class="pull-right">{{date_from_now ../metadata.mtime}}</span>
+                        </li>
+                        <li class="me" role="presentation">
+                            Created <span class="pull-right">{{date_from_now ../metadata.ctime}}</span>
+                        </li>
+                    </ul>
+                    {{/active_post}}
+                    {{/each}}
                 </div>
             </div>
         </div>
