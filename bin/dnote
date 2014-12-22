@@ -3,10 +3,10 @@
 'use strict';
 process.title = process.bin = 'dnote';
 
-var note = require('../index.js'),
+var Path = require('path'),
+    note = require(Path.resolve('../index.js')),
     portfinder = require('portfinder'),
     opener = require('opener'),
-    Path = require('path'),
     parser = require("nomnom");
 
 parser.command('serve')
