@@ -16,6 +16,8 @@
   "author": "Denke Open Source Team <opensource@denke.com.br>",
   "license": "MIT",
   "repository": "https://github.com/denke/note",
+  "homepage":     "https://github.com/denke/note",
+  "bugs":         "https://github.com/denke/note/issues",
   "dependencies": {
     "front-matter": "0.2.0",
     "glob": "4.0.6",
