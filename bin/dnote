@@ -3,8 +3,9 @@
 'use strict';
 process.title = process.bin = 'dnote';
 
-var Path = require('path'),
-    note = require(Path.join(__dirname,'../index.js')),
+var Path = require('path');
+console.log(Path.join(__dirname,'../index.js'))
+var note = require(Path.join(__dirname,'../index.js')),
     portfinder = require('portfinder'),
     opener = require('opener'),
     parser = require("nomnom");
