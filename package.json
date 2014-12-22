@@ -1,21 +1,30 @@
 {
   "name": "denke-note",
-  "version": "0.1.5",
-  "description": "Create simple websites to host your markdown documents.",
+  "version": "0.1.6",
+  "description": "A simple cli tool to create a beautiful website to host your markdown documents.",
   "main": "index.js",
   "bin": {
-    "dnote": "./bin/dnote"
+    "dnote": "bin/dnote"
   },
   "keywords": [],
   "scripts": {
-    "start": "node ./bin/dnote"
+    
   },
   "engines": {
     "node": ">=0.10.32"
   },
+  "preferGlobal": true,
   "author": "Denke Open Source Team <opensource@denke.com.br>",
-  "license": "MIT",
-  "repository": "https://github.com/denke/note",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/denke/note/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/denke/note.git"
+  },
   "homepage":     "https://github.com/denke/note",
   "bugs":         "https://github.com/denke/note/issues",
   "dependencies": {

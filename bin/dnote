@@ -2,10 +2,9 @@
 
 'use strict';
 
-process.bin = 'dnote';
-process.title = 'Denke Note';
+process.title = process.bin = 'dnote';
 
-var note = require('../index.js'),
+var note = require('../lib/denke-note.js'),
     portfinder = require('portfinder'),
     opener = require('opener'),
     Path = require('path'),

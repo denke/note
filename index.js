@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./lib/denke-note.js');
+module.exports = require('lib/denke-note.js');
