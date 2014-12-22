@@ -1,15 +1,13 @@
 {
   "name": "denke-note",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "A simple cli tool to create a beautiful website to host your markdown documents.",
   "main": "index.js",
   "bin": {
     "dnote": "bin/dnote"
   },
   "keywords": [],
-  "scripts": {
-    
-  },
+  "scripts": {},
   "engines": {
     "node": ">=0.10.32"
   },
@@ -25,16 +23,16 @@
     "type": "git",
     "url": "git://github.com/denke/note.git"
   },
-  "homepage":     "https://github.com/denke/note",
-  "bugs":         "https://github.com/denke/note/issues",
+  "homepage": "https://github.com/denke/note",
+  "bugs": "https://github.com/denke/note/issues",
   "dependencies": {
     "front-matter": "0.2.0",
     "glob": "4.0.6",
     "handlebars": "2.0.0",
     "hapi": "6.11.1",
+    "html-pdf": "0.3.0",
     "js-yaml": "3.2.2",
     "lodash": "2.4.1",
-    "markdown-pdf": "3.0.2",
     "marked": "0.3.2",
     "mime": "1.2.11",
     "moment": "2.8.3",

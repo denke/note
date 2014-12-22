@@ -30,7 +30,7 @@
             {{#if showCategories}}
             <ul class="collapse nav navbar-nav navbar-collapse navbar-right">
                 {{#each categories}}
-                <li {{#active_class @index @root.cindex}}class="active"{{/active_class}}>
+                <li {{#active_post @index @root.cindex}}class="active"{{/active_post}}>
                     <a href="{{../baseUrl}}{{.}}">{{category_name}}</a>
                 </li>
                 {{/each}}
@@ -45,7 +45,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         {{#each posts}}
-                        <div role="tabpanel" class="tab-pane {{#active_class @index @root.pindex}}active{{/active_class}}  " id="{{metadata.url}}">
+                        <div role="tabpanel" class="tab-pane {{#active_post @index @root.pindex}}active{{/active_post}}  " id="{{metadata.url}}">
                             {{{text}}}
                         </div>
                         {{/each}}
@@ -57,7 +57,7 @@
                             Related Information
                         </li>
                         {{#each posts}} 
-                        <li role="presentation" {{#active_class @index @root.pindex}}class="active"{{/active_class}}>
+                        <li role="presentation" {{#active_post @index @root.pindex}}class="active"{{/active_post}}>
                             <a href="#{{metadata.url}}" aria-controls="{{metadata.url}}" role="tab" data-toggle="tab">
                                 {{metadata.title}}
                                 <a class="permalink" href="{{../baseUrl}}{{../cat}}/{{metadata.url}}"><i class="ion-link"></i></a>
@@ -65,6 +65,20 @@
                         </li>
                         {{/each}}
                     </ul>
+                    {{#if pdf}}
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="mh" role="presentation">
+                            Download
+                        </li>
+                        <li role="presentation">
+                            {{#each posts}}
+                            {{#active_post @index @root.pindex}}
+                            <a href="{{../../baseUrl}}print/pdf/{{../../cat}}/{{metadata.url}}">PDF</a>
+                            {{/active_post}}
+                            {{/each}}
+                        </li>
+                    </ul>
+                    {{/if}}
                 </div>
             </div>
         </div>
