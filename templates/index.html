@@ -45,9 +45,11 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         {{#each posts}}
-                        <div role="tabpanel" class="tab-pane {{#active_post @index @root.pindex}}active{{/active_post}}  " id="{{metadata.url}}">
-                            {{{text}}}
+                        {{#active_post @index @root.pindex}}
+                        <div class="tab-pane active" id="{{../metadata.url}}">
+                            {{{../text}}}
                         </div>
+                        {{/active_post}}
                         {{/each}}
                     </div>
                 </div>
@@ -59,9 +61,8 @@
                         </li>
                         {{#each posts}} 
                         <li role="presentation" {{#active_post @index @root.pindex}}class="active"{{/active_post}}>
-                            <a href="#{{metadata.url}}" aria-controls="{{metadata.url}}" role="tab" data-toggle="tab">
+                            <a href="{{../baseUrl}}{{../cat}}/{{metadata.url}}">
                                 {{metadata.title}}
-                                <a class="permalink" href="{{../baseUrl}}{{../cat}}/{{metadata.url}}"><i class="ion-link"></i></a>
                             </a>
                         </li>
                         {{/each}}
