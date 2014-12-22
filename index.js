@@ -1,2 +1,3 @@
 'use strict';
-module.exports = require('./lib/denke-note.js');
+var Path = require('path');
+module.exports = require(Path.join(__dirname,'lib/denke-note.js'));
