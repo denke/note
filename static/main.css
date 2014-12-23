@@ -1,5 +1,5 @@
 @import url("//fonts.googleapis.com/css?family=Raleway:400,700");
-body {padding-top: 60px;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { position: relative; }
 .nav-stacked {margin-top: 26px;}
 .nav .permalink {display: none; padding: 9px 15px 4px; background:#2ECC71 !important; position: absolute; right: 0; top: 0}
 .nav .active { position: relative;}
@@ -9,3 +9,5 @@ body {padding-top: 60px;}
 .mh {padding: 10px 15px;color:#999;font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;}
 .me {padding: 5px 15px;color:#999; border-bottom: 1px solid #dedede;}
 .me.first {border-top: 1px solid #dedede;}
+.hplk { padding-right: 6px;margin-left: 10px;word-wrap: break-word;color: #CBCBCB;text-decoration: none;display: inline-block;}
+.hplk:hover { color: #333; text-decoration: none}
