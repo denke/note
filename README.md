@@ -4,9 +4,11 @@ A simple web app to serve Markdown documents.
 
 ## Setup
 
-Install with npm: 
+Install with npm:
 
-    > npm install -g denke-note
+```
+me@denke:~$  npm install -g denke-note
+```
 
 ## How it works
 
