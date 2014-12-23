@@ -2,15 +2,42 @@
 
 A simple web app to serve Markdown documents.
 
-## Install with npm
+## Setup
+
+Install with npm: 
 
     > npm install -g denke-note
 
-### Command Line
+Run on the command line:
 
-    > dnote serve 
+    > dnote serve # This serves the Markdown files on the current folder
+    > dnote serve content # This serves the Markdown files on the `content` folder
 
-This will serve the Markdown files on the current folder, inside this folder and it subfolders we expect to find files (grouped with directories) such as this one:
+## Folder Structure
+
+The suggested structure is this:
+
+```
+docs/ 
+├── 0-setting up
+├── 1-overview
+├── 2-examples
+└── 3-tutorial
+```
+
+Serve documents like this:
+
+```
+me@denke:~/project/docs$ dnote serve
+
+or
+
+me@denke:~$ dnote serve project/docs
+```
+
+## Markdown File
+
+ and it subfolders we expect to find files (grouped with directories) such as this one:
 
 ```markdown
 ---
@@ -25,6 +52,38 @@ __Input:__
 * Mês
 * Ano
 ```
+
+### Links
+
+Link text is delimited by [square brackets].
+ 
+To create a link, use a second set of square brackets immediately after the link text’s closing square bracket. Inside this second set, place a label of your choosing to identify the link. For example:
+ 
+This is `[an example][id]` reference-style link that is rendered like this: [an example][id].
+ 
+Then, atthe end of the document, you define your link label like this, on a line by itself:
+ 
+```
+[id]: http://denke.com.br/
+```
+ 
+If your link references another document, define your label as `{category}/{filename}`:
+ 
+```
+[id]: development/conventions.md
+```
+ 
+If your link references another document's heading (a very specific information), define your label as `{category}/{filename}#heading-id`. Like this:
+ 
+```
+[id]: development/conventions.md#code-style-conventions
+```
+ 
+If you have a heading such as:
+ 
+```
+## Code Stye Conventions
+``` 
 
 ### API 
 
