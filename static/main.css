@@ -63,4 +63,5 @@ h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, h4:ho
 }
 .img-wrap > p {
 	margin: 13px 0;
+	color: #999;
 }
