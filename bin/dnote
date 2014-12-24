@@ -1,26 +1,34 @@
 #!/usr/bin/env node
-
 'use strict';
 process.title = process.bin = 'dnote';
-
 var Path = require('path'),
     portfinder = require('portfinder'),
     opener = require('opener'),
-    parser = require("nomnom");
+    parser = require("nomnom"),
+    note = require(Path.join(__dirname,'../index.js'));
 
-var fn = Path.join(__dirname,'../index.js'); 
-var note = require(fn);
+parser.option('version', {
+  flag: true,
+  help: 'print version and exit',
+  abbr: 'v',
+  callback: function() {
+    var pkg = require(Path.join(__dirname,'../package.json'));
+    return pkg.name + '@' + pkg.version;
+  }
+});
 
-parser.command('serve')
-  .callback(function(opts) {
-    var config = {};
-    if(opts[1]) { 
-    	config.content = Path.resolve(opts[1]); 
-    } else { 
-    	config.content = process.cwd();
-    }
-    note.start(config);
-  })
-  .help("Serve the markdown files on the current folder.");
+var serve = function(opts) {
+  var config = {};
+  if(opts[1]) { 
+    config.content = Path.resolve(opts[1]); 
+  } else { 
+    config.content = process.cwd();
+  }
+  note.start(config);
+};
+parser.command('serve').callback(serve)
+.help("Serve the markdown files on the current folder.");
+parser.command('s').callback(serve)
+.help("Serve the markdown files on the current folder.");
 
 parser.parse();
