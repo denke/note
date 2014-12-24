@@ -61,3 +61,6 @@ h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, h4:ho
 .img-wrap > img {
 	max-width: 100%;
 }
+.img-wrap > p {
+	margin: 13px 0;
+}
