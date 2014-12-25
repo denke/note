@@ -59,15 +59,21 @@
                         </li>
                         {{#each posts}} 
                         <li role="presentation" {{#active_post @index @root.pindex}}class="active"{{/active_post}}>
-                            <a href="{{../baseUrl}}{{../cat}}/{{metadata.url}}">
+                            {{#if @root.generated}}
+                            <a href="{{@root.baseUrl}}{{@root.cat}}-{{metadata.url}}.html">
                                 {{metadata.title}}
                             </a>
+                            {{else}}
+                            <a href="{{@root.baseUrl}}{{@root.cat}}/{{metadata.url}}">
+                                {{metadata.title}}
+                            </a>
+                            {{/if}}
                         </li>
                         {{/each}}
                     </ul>
                     {{#each posts}}
                     {{#active_post @index @root.pindex}}
-                    {{#if ../../pdf}}
+                    {{#if @root.pdf}}
                     <ul class="nav nav-pills nav-stacked">
                         <li class="mh" role="presentation">
                             Download

@@ -1,6 +1,6 @@
 {
   "name": "denke-note",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "A simple cli tool to create a beautiful website to host your markdown documents.",
   "main": "index.js",
   "bin": {
@@ -35,6 +35,7 @@
     "marked": "0.3.2",
     "moment": "2.8.3",
     "mustache": "0.8.2",
+    "ncp": "^1.0.1",
     "node-watch": "0.3.4",
     "nomnom": "1.8.0",
     "opener": "1.4.0",

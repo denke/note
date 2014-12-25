@@ -27,8 +27,24 @@ var serve = function(opts) {
   note.start(config);
 };
 parser.command('serve').callback(serve)
-.help("Serve the markdown files on the current folder.");
-parser.command('s').callback(serve)
-.help("Serve the markdown files on the current folder.");
+.help("Serve the markdown files on the give path (defaults to the current directory).");
+
+var generate = function(opts) {
+  var config = {};
+  console.log(opts)
+  if(opts[1]) { 
+    config.content = Path.resolve(opts[1]); 
+  } else { 
+    config.content = process.cwd();
+  }
+  note.generate(config);
+};
+parser.command('site')
+.option('outdir', {
+    abbr: 'o',
+    help: "directory to save html files"
+ })
+.callback(generate)
+.help("Generate a website from the markdown files on the give path (defaults to the current directory).");
 
 parser.parse();
