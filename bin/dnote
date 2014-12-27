@@ -9,7 +9,7 @@ var Path = require('path'),
 
 parser.option('version', {
   flag: true,
-  help: 'print version and exit',
+  help: 'prints the current dnote version',
   abbr: 'v',
   callback: function() {
     var pkg = require(Path.join(__dirname,'../package.json'));
@@ -27,23 +27,48 @@ var serve = function(opts) {
   note.start(config);
 };
 parser.command('serve').callback(serve)
-.help("Serve the markdown files on the give path (defaults to the current directory).");
+.help("serve the .md files on a given folder (defaults to current folder)");
 
 var generate = function(opts) {
+  var config = {};
+  console.log(opts)
+  if(opts[1]) { 
+    config.content = Path.resolve(opts[1]); 
+  } else { 
+    config.content = process.cwd();
+  }
+  if(opts.out) {
+    config.outputFolder = opts.out; 
+  }
+  note.generate(config);
+};
+parser.command('site')
+.option('out', {
+    abbr: 'o',
+    help: "a folder to save the html files"
+ })
+.callback(generate)
+.help("generate a static website from the .md files on a given folder (defaults to current folder)");
+
+var init = function(opts) {
   var config = {};
   if(opts[1]) { 
     config.content = Path.resolve(opts[1]); 
   } else { 
     config.content = process.cwd();
   }
-  note.generate(config);
+  if(opts.out) {
+    config.outputFolder = opts.out; 
+  }
+  note.init(config);
 };
-parser.command('site')
-.option('outdir', {
+parser.command('init')
+.option('out', {
     abbr: 'o',
-    help: "directory to save html files"
+    help: "a folder to save the scaffolding files"
  })
-.callback(generate)
-.help("Generate a website from the markdown files on the give path (defaults to the current directory).");
+.callback(init)
+.help("generate a folder with .md files to start your project on a given path (defaults to current folder)");
+
 
 parser.parse();
