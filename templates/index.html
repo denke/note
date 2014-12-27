@@ -28,7 +28,11 @@
             <ul class="collapse nav navbar-nav navbar-collapse navbar-right">
                 {{#each categories}}
                 <li {{#active_post @index @root.cindex}}class="active"{{/active_post}}>
-                    <a href="{{../baseUrl}}{{.}}">{{category_name}}</a>
+                    {{#if @root.generated}}
+                    <a href="{{@root.baseUrl}}{{.}}.html">{{category_name}}</a>
+                    {{else}}
+                    <a href="{{@root.baseUrl}}{{.}}">{{category_name}}</a>
+                    {{/if}}
                 </li>
                 {{/each}}
             </ul>

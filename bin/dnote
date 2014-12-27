@@ -31,7 +31,6 @@ parser.command('serve').callback(serve)
 
 var generate = function(opts) {
   var config = {};
-  console.log(opts)
   if(opts[1]) { 
     config.content = Path.resolve(opts[1]); 
   } else { 
