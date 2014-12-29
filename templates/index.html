@@ -22,13 +22,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 {{/if}}
-                <a href="{{baseUrl}}" class="navbar-brand">{{pageTitle}}</a>
+                <a href="{{baseUrl}}" class="navbar-brand">{{{pageTitle}}}</a>
             </div>
             {{#if showCategories}}
             <ul class="collapse nav navbar-nav navbar-collapse navbar-right">
                 {{#each categories}}
                 <li {{#active_post @index @root.cindex}}class="active"{{/active_post}}>
-                    {{#if @root.generated}}
+                    {{#if @root.saved}}
                     <a href="{{@root.baseUrl}}{{.}}.html">{{category_name}}</a>
                     {{else}}
                     <a href="{{@root.baseUrl}}{{.}}">{{category_name}}</a>
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div role="tabpanel">
-                <div class="col-sm-12 col-md-9">
+                <div class="col-sm-12 {{#if showRelatedLinks}}col-md-9{{/if}}">
                     <!-- Tab panes -->
                     <div class="tab-content">
                         {{#each posts}}
@@ -54,6 +54,7 @@
                         {{/each}}
                     </div>
                 </div>
+                {{#if showRelatedLinks}}
                 <div class="col-sm-12 col-md-3">
                     <ul class="nav nav-pills nav-stacked" role="tablist">
                         <li class="mh" role="presentation">
@@ -61,7 +62,7 @@
                         </li>
                         {{#each posts}} 
                         <li role="presentation" {{#active_post @index @root.pindex}}class="active"{{/active_post}}>
-                            {{#if @root.generated}}
+                            {{#if @root.saved}}
                             <a href="{{@root.baseUrl}}{{@root.cat}}-{{metadata.url}}.html">
                                 {{metadata.title}}
                             </a>
@@ -99,6 +100,7 @@
                     {{/active_post}}
                     {{/each}}
                 </div>
+                {{/if}}
             </div>
         </div>
     </div>

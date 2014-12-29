@@ -6,7 +6,9 @@ var Path = require('path'),
     opener = require('opener'),
     parser = require("nomnom"),
     note = require(Path.join(__dirname,'../index.js'));
-
+/*
+ * Option: version
+ */
 parser.option('version', {
   flag: true,
   help: 'prints the current dnote version',
@@ -16,7 +18,9 @@ parser.option('version', {
     return pkg.name + '@' + pkg.version;
   }
 });
-
+/*
+ * Method: serve
+ */
 var serve = function(opts) {
   var config = {};
   if(opts[1]) { 
@@ -28,28 +32,38 @@ var serve = function(opts) {
 };
 parser.command('serve').callback(serve)
 .help("serve the .md files on a given folder (defaults to current folder)");
-
-var generate = function(opts) {
+/*
+ * Method: save
+ */
+var save = function(opts) {
   var config = {};
-  console.log(opts)
   if(opts[1]) { 
     config.content = Path.resolve(opts[1]); 
   } else { 
     config.content = process.cwd();
   }
   if(opts.out) {
-    config.outputFolder = opts.out; 
+    config.outputPath = opts.out; 
   }
-  note.generate(config);
+  if(opts.dirname) {
+    config.outputDir = opts.out; 
+  }
+  note.save(config);
 };
-parser.command('site')
+parser.command('save')
 .option('out', {
     abbr: 'o',
-    help: "a folder to save the html files"
+    help: "the path in which we'll create a folder to save the html files"
  })
-.callback(generate)
-.help("generate a static website from the .md files on a given folder (defaults to current folder)");
-
+.option('dirname', {
+    abbr: 'd',
+    help: "the name of the folder that will store the html files"
+ })
+.callback(save)
+.help("save a static website from the .md files on a given folder (defaults to current folder)");
+/*
+ * Method: init
+ */
 var init = function(opts) {
   var config = {};
   if(opts[1]) { 
@@ -68,7 +82,8 @@ parser.command('init')
     help: "a folder to save the scaffolding files"
  })
 .callback(init)
-.help("generate a folder with .md files to start your project on a given path (defaults to current folder)");
-
-
+.help("generate a folder with .md files to help you start your project");
+/*
+ * do your magic, nomnom
+ */
 parser.parse();
