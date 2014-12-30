@@ -6,6 +6,7 @@ var Path = require('path'),
     opener = require('opener'),
     parser = require("nomnom"),
     note = require(Path.join(__dirname,'../index.js'));
+parser.script('dnote');
 /*
  * Option: version
  */
@@ -31,7 +32,7 @@ var serve = function(opts) {
   note.start(config);
 };
 parser.command('serve').callback(serve)
-.help("serve the .md files on a given folder (defaults to current folder)");
+.help("serve the .md files on a given folder");
 /*
  * Method: save
  */
@@ -60,7 +61,7 @@ parser.command('save')
     help: "the name of the folder that will store the html files"
  })
 .callback(save)
-.help("save a static website from the .md files on a given folder (defaults to current folder)");
+.help("save a static website from the .md files on a given folder");
 /*
  * Method: init
  */
