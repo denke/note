@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{{pageTitle}}</title>
+    <title>{{@root.pageTitle}}</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="Denke">
-    <link rel="stylesheet" href="{{baseUrl}}static/files/bs.min.css" type="text/css">
-    <link rel="stylesheet" href="{{baseUrl}}static/files/main.css" type="text/css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="{{@root.baseUrl}}libs/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{{@root.baseUrl}}libs/ionicons/css/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="{{@root.baseUrl}}static/files/main.css" type="text/css">
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
@@ -22,7 +22,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 {{/if}}
-                <a href="{{baseUrl}}" class="navbar-brand">{{{pageTitle}}}</a>
+                <a href="{{@root.baseUrl}}" class="navbar-brand">{{{pageTitle}}}</a>
             </div>
             {{#if showCategories}}
             <ul class="collapse nav navbar-nav navbar-collapse navbar-right">
@@ -106,8 +106,8 @@
     </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="{{baseUrl}}static/files/bs.min.js"></script>
+    <script src="{{@root.baseUrl}}libs/jquery/jquery.min.js"></script>
+    <script src="{{@root.baseUrl}}libs/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 

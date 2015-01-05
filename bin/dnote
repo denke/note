@@ -1,88 +1,95 @@
 #!/usr/bin/env node
 'use strict';
 process.title = process.bin = 'dnote';
-var Path = require('path'),
-    parser = require("nomnom"),
-    note = require(Path.join(__dirname,'../index.js'));
-parser.script('dnote');
-/*
- * Option: version
- */
-parser.option('version', {
-  flag: true,
-  help: 'prints the current dnote version',
-  abbr: 'v',
-  callback: function() {
-    var pkg = require(Path.join(__dirname,'../package.json'));
-    return pkg.name + '@' + pkg.version;
-  }
-});
-/*
- * Method: serve
- */
-var serve = function(opts) {
+
+var cli = require('commander'),
+    Path = require('path'),
+    note = require(Path.join(__dirname,'../index.js')),
+    dnoteInfo = require(Path.join(__dirname,'../package.json'));
+
+cli.version(dnoteInfo.version);
+
+cli
+.command('serve [folder]')
+.description('serve a webpage from .md files')
+.action(function(folder, options) {
   var config = {};
-  if(opts[1]) { 
-    config.content = Path.resolve(opts[1]); 
+  if(folder) { 
+    config.content = Path.resolve(folder); 
   } else { 
     config.content = process.cwd();
   }
   note.start(config);
-};
-parser.command('serve').callback(serve)
-.help("serve the .md files on a given folder");
-/*
- * Method: save
- */
-var save = function(opts) {
+})
+.on('--help', function(){
+  console.log('  Example:');
+  console.log();
+  console.log('    ' + '$ dnote serve ~/Documents/blog/'.blue);
+  console.log();
+});
+
+cli
+.command('save [folder]')
+.description('save a static website from .md files')
+.option('-d, --dirname <name>', 'the NAME of the folder that will store the html files')
+.option('-o, --out <path>', 'the PATH to the folder that will store the html files')
+.action(function(folder, options) {
   var config = {};
-  if(opts[1]) { 
-    config.content = Path.resolve(opts[1]); 
+  if(folder) { 
+    config.content = Path.resolve(folder); 
   } else { 
     config.content = process.cwd();
   }
-  if(opts.out) {
-    config.outputPath = opts.out; 
+  if(options.out) {
+    config.outputPath = options.out; 
+  } else {
+    config.outputPath = config.content;
   }
-  if(opts.dirname) {
-    config.outputDir = opts.out; 
+  if(options.dirname) {
+    config.outputDir = options.dirname; 
   }
   note.save(config);
-};
-parser.command('save')
-.option('out', {
-    abbr: 'o',
-    help: "the path in which we'll create a folder to save the html files"
- })
-.option('dirname', {
-    abbr: 'd',
-    help: "the name of the folder that will store the html files"
- })
-.callback(save)
-.help("save a static website from the .md files on a given folder");
-/*
- * Method: init
- */
-var init = function(opts) {
+})
+.on('--help', function(){
+  console.log('  Examples:');
+  console.log();
+  console.log('    ' + '$ dnote save ~/Documents/blog/ -d site             '.blue+' # saves the HTML files to ~/Documents/blog/site/ ');
+  console.log('    ' + '$ dnote save ~/Documents/blog/ -d blog -o /var/www/'.blue+' # saves the HTML files to /var/www/blog/');
+  console.log();
+});
+
+cli
+.command('init [folder]')
+.description('init a node.js project with Denke Note as a dependency')
+.action(function(folder, options) {
   var config = {};
-  if(opts[1]) { 
-    config.content = Path.resolve(opts[1]); 
+  if(folder) { 
+    config.content = Path.resolve(folder); 
   } else { 
     config.content = process.cwd();
   }
-  if(opts.out) {
-    config.outputFolder = opts.out; 
-  }
   note.init(config);
-};
-parser.command('init')
-.option('out', {
-    abbr: 'o',
-    help: "a folder to save the scaffolding files"
- })
-.callback(init)
-.help("generate a folder with .md files to help you start your project");
-/*
- * do your magic, nomnom
- */
-parser.parse();
+})
+.on('--help', function(){
+  console.log('  Example:');
+  console.log();
+  console.log('    ' + '$ dnote init');
+  console.log();
+});
+
+cli
+.command('generate [folder]')
+.alias('new')
+.description('create some markdown files to get you started')
+.action(function(options) {
+  var config = {};
+  note.new(config);
+})
+.on('--help', function(){
+  console.log('  Example:');
+  console.log();
+  console.log('    ' + '$ dnote init');
+  console.log();
+});
+
+cli.parse(process.argv);
