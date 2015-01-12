@@ -1,13 +1,15 @@
 {
   "name": "denke-note",
-  "version": "0.2.25",
+  "version": "0.2.26",
   "description": "A simple cli tool to create a beautiful website to host your markdown documents.",
   "main": "index.js",
   "bin": {
     "dnote": "bin/dnote"
   },
   "keywords": [],
-  "scripts": {},
+  "scripts": {
+    "postinstall": "bower install -F"
+  },
   "engines": {
     "node": ">=0.10.32"
   },
