@@ -1,0 +1,25 @@
+{
+  "name": "Denke Note",
+  "main": "index.js",
+  "version": "0.2.22",
+  "homepage": "https://github.com/denke/note",
+  "authors": [
+    "Denke Open Source Team <opensource@denke.com.br>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionicons": "~2.0.0",
+    "bootswatch-dist": "3.3.0-readable"
+  }
+}
