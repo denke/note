@@ -20,6 +20,9 @@
   ],
   "dependencies": {
     "ionicons": "~2.0.0",
-    "bootswatch-dist": "3.3.0-readable"
+    "bootswatch-dist": "3.3.2-simplex"
+  },
+  "resolutions": {
+    "bootswatch-dist": "3.3.2-yeti"
   }
 }
