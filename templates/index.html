@@ -44,6 +44,15 @@
             <div role="tabpanel">
                 <div class="col-sm-12 {{#if showRelatedLinks}}col-md-9{{/if}}">
                     <!-- Tab panes -->
+                    {{#if showAllPosts}}
+                    <div class="tab-content">
+                        {{#each posts}}
+                        <div class="tab-pane active" id="{{metadata.url}}">
+                            {{{text}}}
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{else}}
                     <div class="tab-content">
                         {{#each posts}}
                         {{#active_post @index @root.pindex}}
@@ -52,7 +61,8 @@
                         </div>
                         {{/active_post}}
                         {{/each}}
-                    </div>
+                    </div>                    
+                    {{/if}}
                 </div>
                 {{#if showRelatedLinks}}
                 <div class="col-sm-12 col-md-3">
@@ -79,10 +89,13 @@
                     {{#if @root.pdf}}
                     <ul class="nav nav-pills nav-stacked">
                         <li class="mh" role="presentation">
-                            Download
+                            Download PDF
                         </li>
                         <li role="presentation">
-                            <a href="{{@root.baseUrl}}print/pdf/{{@root.cat}}/{{metadata.url}}">PDF</a>
+                            <a href="{{@root.baseUrl}}print/pdf/{{@root.cat}}/{{metadata.url}}">This Page</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="{{@root.baseUrl}}print/pdf/{{@root.cat}}/*">This Category</a>
                         </li>
                     </ul>
                     {{/if}}
