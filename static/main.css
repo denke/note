@@ -1,6 +1,27 @@
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     position: relative;
 }
+h1 {
+    text-align: center;
+    letter-spacing: -0.05rem;
+    margin-top: 52.5px;
+    margin-bottom: 21px;
+}
+h2 {
+    text-align: center;
+    letter-spacing: -0.02rem;
+    margin-top: 42px;
+    margin-bottom: 21px;
+}
+h3, h4 {
+    text-align: center;
+    letter-spacing: -0.01rem;
+    margin-top: 31.5px;
+    margin-bottom: 21px;
+}
+p,img,ul,ol {
+    margin-bottom: 21px;
+}
 .nav-stacked {
     margin-top: 26px;
 }
@@ -63,4 +84,13 @@ h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, h4:ho
 .img-wrap > p {
 	margin: 13px 0;
 	color: #999;
+}
+.tab-content {
+    padding-bottom: 84px;
+}
+.tab-content ul li, 
+.tab-content ol li, 
+.tab-content li > ul, 
+.tab-content li > ol  {
+    margin-top: 5.25px;
 }
