@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{@root.pageTitle}}</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Denke">
+    <style type="text/css">
+        {{{inlineStyle}}}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div role="tabpanel">
+                <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-md-offset-3">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        {{#each posts}}
+                        {{#active_post @index @root.pindex}}
+                        <div class="tab-pane active" id="{{../metadata.url}}">
+                            {{{../text}}}
+                        </div>
+                        {{/active_post}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
