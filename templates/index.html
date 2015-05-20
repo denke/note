@@ -70,7 +70,7 @@
                         {{#each posts}}
                         {{#active_post @index @root.pindex}}
                         <li role="presentation">
-                            <a href="{{@root.baseUrl}}article/{{@root.cat}}/{{metadata.url}}">Single article view</a>
+                            <a href="{{@root.baseUrl}}article/{{@root.cat}}:{{metadata.url}}">View as a Single Article</a>
                         </li>
                         {{/active_post}}
                         {{/each}}
