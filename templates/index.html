@@ -67,6 +67,13 @@
                 {{#if showRelatedLinks}}
                 <div class="col-sm-12 col-md-3">
                     <ul class="nav nav-pills nav-stacked" role="tablist">
+                        {{#each posts}}
+                        {{#active_post @index @root.pindex}}
+                        <li role="presentation">
+                            <a href="{{@root.baseUrl}}article/{{@root.cat}}/{{metadata.url}}">Single article view</a>
+                        </li>
+                        {{/active_post}}
+                        {{/each}}
                         <li class="mh" role="presentation">
                             Related Links
                         </li>
