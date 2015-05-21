@@ -1255,14 +1255,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 /* line 1973, stdin */
 h1, .h1, h2, .h2, h3, .h3 {
-  margin-top: 20px;
-  margin-bottom: 10px; }
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
   /* line 1977, stdin */
   h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
     margin-top: 0; }
   /* line 1983, stdin */
   h1 + h1, h1 + .h1, h1 + h2, h1 + .h2, h1 + h3, h1 + .h3, .h1 + h1, .h1 + .h1, .h1 + h2, .h1 + .h2, .h1 + h3, .h1 + .h3, h2 + h1, h2 + .h1, h2 + h2, h2 + .h2, h2 + h3, h2 + .h3, .h2 + h1, .h2 + .h1, .h2 + h2, .h2 + .h2, .h2 + h3, .h2 + .h3, h3 + h1, h3 + .h1, h3 + h2, h3 + .h2, h3 + h3, h3 + .h3, .h3 + h1, .h3 + .h1, .h3 + h2, .h3 + .h2, .h3 + h3, .h3 + .h3 {
-    margin-top: 10px; }
+    margin-top: 1rem; }
 
 /* line 1990, stdin */
 h4, .h4, h5, .h5, h6, .h6 {
@@ -1362,7 +1362,7 @@ a.subdued {
     padding-right: 0; }
 
 /* line 2084, stdin */
-p, .ul, .ol, dl, dt, dd {
+p, ul, ol, dl, dt, dd {
   margin: 0 0 20px;
   font-family: "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; }
 
@@ -1493,22 +1493,22 @@ blockquote {
     letter-spacing: -2px; }
 
 /* line 2177, stdin */
-.ul {
+ul {
   list-style: square outside none !important; }
 
 /* line 2180, stdin */
-.ol {
+ol {
   list-style: decimal outside none !important; }
 
 /* line 2183, stdin */
-.ul, .ol {
+ul, ol {
   display: block;
   margin-left: 10px;
   padding-left: 16px;
   margin-top: 0;
   margin-bottom: 10px; }
   /* line 2189, stdin */
-  .ul .ul, .ul .ol, .ol .ul, .ol .ol {
+  ul ul, ul ol, ol ul, ol ol {
     margin-bottom: 0; }
 
 /* line 2194, stdin */
@@ -4546,5 +4546,27 @@ pre {
 .headerlink i {
   font-size: 2rem;
   margin-left: 1rem;
+  opacity: 0.15;
+  color: #343434;
+}
+.headerlink i:hover,
+.headerlink i:active,
+.headerlink i:focus {
   opacity: 0.5;
+}
+
+h1 { margin-top: 3rem; }
+h1:first-child { margin-top: 4rem; }
+
+h2 { margin-top: 2.75rem; }
+h3 { margin-top: 2.5rem; }
+h4 { margin-top: 2.25rem; }
+h5,h6 { margin-top: 2rem; }
+
+.article {
+  padding-bottom: 4rem;
+}
+
+.article p, .article li {
+  font-size: 1.25rem;
 }
