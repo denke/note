@@ -357,9 +357,9 @@ body, .ionic-body {
   padding: 0;
   color: #000;
   word-wrap: break-word;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 18px;
   font-family: "museo-sans-condensed", "Helvetica Neue", "Roboto", sans-serif;
-  line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
   -webkit-user-drag: none;
@@ -926,7 +926,7 @@ legend {
 /* line 1552, stdin */
 label, input, button, select, textarea {
   font-weight: normal;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.5; }
 
 /* line 1558, stdin */
@@ -941,8 +941,8 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   height: 38px;
   color: #111;
   vertical-align: middle;
-  font-size: 18px;
-  line-height: 20px; }
+  font-size: 14px;
+  line-height: 18px; }
 
 /* line 1598, stdin */
 .platform-ios input[type="datetime-local"], .platform-ios input[type="date"], .platform-ios input[type="month"], .platform-ios input[type="time"], .platform-ios input[type="week"], .platform-android input[type="datetime-local"], .platform-android input[type="date"], .platform-android input[type="month"], .platform-android input[type="time"], .platform-android input[type="week"] {
@@ -1166,8 +1166,8 @@ body, .ionic-body {
   text-align: center;
   white-space: nowrap;
   font-weight: bold;
-  font-size: 18px;
-  line-height: 20px; }
+  font-size: 14px;
+  line-height: 18px; }
   /* line 1886, stdin */
   .badge:empty {
     display: none; }
@@ -1271,19 +1271,19 @@ h4, .h4, h5, .h5, h6, .h6 {
 
 /* line 1995, stdin */
 h1, .h1 {
-  font-size: 46px; }
+  font-size: 32px; }
 
 /* line 1996, stdin */
 h2, .h2 {
-  font-size: 38px; }
+  font-size: 28px; }
 
 /* line 1997, stdin */
 h3, .h3 {
-  font-size: 31px; }
+  font-size: 24px; }
 
 /* line 1998, stdin */
 h4, .h4 {
-  font-size: 23px; }
+  font-size: 20px; }
 
 /* line 1999, stdin */
 h5, .h5 {
@@ -1485,7 +1485,7 @@ blockquote {
   /* line 2165, stdin */
   .blockquote-emphasis p {
     color: #5ad427;
-    font-size: 41px;
+    font-size: 28px;
     font-weight: 500;
     font-family: "museo-sans-condensed", "Helvetica Neue", "Roboto", sans-serif;
     line-height: 1.2;
@@ -1590,9 +1590,9 @@ pre {
 @font-face {
   font-family: "Ionicons";
   src: url("/static/files/fonts/ionicons.eot?v=2.0.1");
-  src: url("/static/files/fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"),
-       url("/static/files/fonts/ionicons.ttf?v=2.0.1") format("truetype"),
-       url("/static/files/fonts/ionicons.woff?v=2.0.1") format("woff"),
+  src: url("/static/files/fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"), 
+       url("/static/files/fonts/ionicons.ttf?v=2.0.1") format("truetype"), 
+       url("/static/files/fonts/ionicons.woff?v=2.0.1") format("woff"), 
        url("/static/files/fonts/ionicons.svg?v=2.0.1#Ionicons") format("svg");
   font-weight: normal;
   font-style: normal; }
@@ -4544,21 +4544,10 @@ pre {
   content: "\f30c"; }
 
 .headerlink i {
-  display: none;
-  font-size: inherit;
+  font-size: 2rem;
   margin-left: 1rem;
   opacity: 0.15;
   color: #343434;
-  line-height: 24.3px;
-}
-
-h1:hover .headerlink i,
-h2:hover .headerlink i,
-h3:hover .headerlink i,
-h4:hover .headerlink i,
-h5:hover .headerlink i,
-h6:hover .headerlink i {
-  display: inline-block;
 }
 .headerlink i:hover,
 .headerlink i:active,
@@ -4579,5 +4568,5 @@ h5,h6 { margin-top: 2rem; }
 }
 
 .article p, .article li {
-  font-size: 1.25rem;
+  font-size: 14px;
 }

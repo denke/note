@@ -9,6 +9,7 @@
     <style type="text/css">
         {{{inlineStyle}}}
     </style>
+    <link rel="stylesheet" href="{{@root.baseUrl}}static/files/mermaid.css" type="text/css">
 </head>
 <body>
     <div class="container">
@@ -29,7 +30,7 @@
             </div>
         </div>
     </div>
-
+    <script src="{{@root.baseUrl}}static/files/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
 </body>
-
 </html>
