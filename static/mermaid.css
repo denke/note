@@ -2,13 +2,14 @@
 /* Sequence Diagram variables */
 /* Gantt chart variables */
 .mermaid .label {
-  color: #333333;
+  color: #FFF;
+  font-weight: bold;
 }
 .node rect,
 .node circle,
 .node polygon {
-  fill: #ececff;
-  stroke: #ccccff;
+  fill: #5AD427;
+  stroke: #5AD427;
   stroke-width: 1px;
 }
 .edgePath .path {
@@ -22,14 +23,20 @@
 }
 .cluster text {
   fill: #333333;
+  font-weight: bold;
+}
+.edgeLabel span {
+  background: white !important;
+  color: black;
 }
 .actor {
-  stroke: #ccccff;
-  fill: #ececff;
+  stroke: #5AD427;
+  fill: #5AD427;
 }
 text.actor {
   fill: black;
   stroke: none;
+  font-weight: bold;
 }
 .actor-line {
   stroke: grey;
@@ -55,34 +62,39 @@ text.actor {
 .messageText {
   fill: #333333;
   stroke: none;
+  font-weight: bold;
 }
 .labelBox {
-  stroke: #ccccff;
-  fill: #ececff;
+  stroke: #5AD427;
+  fill: #5AD427;
+  font-weight: bold;
 }
 .labelText {
   fill: black;
   stroke: none;
+  font-weight: bold;
 }
 .loopText {
   fill: black;
   stroke: none;
+  font-weight: bold;
 }
 .loopLine {
   stroke-width: 2;
   stroke-dasharray: "2 2";
   marker-end: "url(#arrowhead)";
-  stroke: #ccccff;
+  stroke: #5AD427;
 }
 .note {
   stroke: #aaaa33;
   fill: #fff5ad;
+  font-weight: bold;
 }
 .noteText {
   fill: black;
   stroke: none;
-  font-family: 'trebuchet ms', verdana, arial;
-  font-size: 14px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 /** Section styling */
 .section {
