@@ -4581,3 +4581,6 @@ h5,h6 { margin-top: 2rem; }
 .article p, .article li {
   font-size: 1.25rem;
 }
+.article img {
+  width: 100%;
+}

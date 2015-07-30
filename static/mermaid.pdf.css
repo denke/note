@@ -8,8 +8,8 @@
 .node rect,
 .node circle,
 .node polygon {
-  fill: #5AD427;
-  stroke: #5AD427;
+  fill: #ebebeb;
+  stroke: #ebebeb;
   stroke-width: 1px;
 }
 .edgePath .path {
@@ -30,8 +30,8 @@
   color: black;
 }
 .actor {
-  stroke: #5AD427;
-  fill: #5AD427;
+  stroke: #ebebeb;
+  fill: #ebebeb;
 }
 text.actor {
   fill: black;
@@ -65,8 +65,8 @@ text.actor {
   font-weight: bold;
 }
 .labelBox {
-  stroke: #5AD427;
-  fill: #5AD427;
+  stroke: #ebebeb;
+  fill: #ebebeb;
   font-weight: bold;
 }
 .labelText {
@@ -83,7 +83,7 @@ text.actor {
   stroke-width: 2;
   stroke-dasharray: "2 2";
   marker-end: "url(#arrowhead)";
-  stroke: #5AD427;
+  stroke: #ebebeb;
 }
 .note {
   stroke: #aaaa33;

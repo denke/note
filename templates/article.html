@@ -1,3 +1,4 @@
+{{#minify}}
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,10 +7,11 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="Denke">
+
+    <link rel="stylesheet" href="{{@root.baseUrl}}static/files/mermaid.css" type="text/css">
     <style type="text/css">
         {{{inlineStyle}}}
     </style>
-    <link rel="stylesheet" href="{{@root.baseUrl}}static/files/mermaid.css" type="text/css">
 </head>
 <body>
     <div class="container">
@@ -31,6 +33,12 @@
         </div>
     </div>
     <script src="{{@root.baseUrl}}static/files/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>
+    mermaid.initialize({
+        startOnLoad:true,
+        cloneCssStyles: false
+    });
+    </script>
 </body>
 </html>
+{{/minify}}
